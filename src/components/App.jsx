@@ -27,6 +27,8 @@ export class App extends Component {
           bad: prevState.bad + 1,
         }));
         break;
+      default:
+        console.log("default");
     }
 
 
