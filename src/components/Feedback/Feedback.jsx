@@ -6,11 +6,10 @@ export const Feedback = ({ names, onAddFeedback }) => {
             <Title>Please leave feedback</Title>
             <ButtonList>
                 {names.map(element => {
-                    {
-                        return (
-                            <Button key={element.id} onClick={evt => onAddFeedback(element.name)}>{element.title}</Button>
-                        )
-                    }
+                    return (
+                        <Button key={element.id} onClick={evt => onAddFeedback(element.name)}>{element.title}</Button>
+                    )
+
                 })}
             </ButtonList>
         </div>
