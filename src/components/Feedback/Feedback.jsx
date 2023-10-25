@@ -1,13 +1,17 @@
 import { Button, ButtonList, Title } from "./Feedback.styled";
 
-export const Feedback = ({ onAddFeedback }) => {
+export const Feedback = ({ names, onAddFeedback }) => {
     return (
         <div>
             <Title>Please leave feedback</Title>
             <ButtonList>
-                <Button onClick={evt => onAddFeedback("good")}>Good</Button>
-                <Button onClick={evt => onAddFeedback("neutral")}>Neutral</Button>
-                <Button onClick={evt => onAddFeedback("bad")}>Bad</Button>
+                {names.map(element => {
+                    {
+                        return (
+                            <Button key={element.id} onClick={evt => onAddFeedback(element.name)}>{element.title}</Button>
+                        )
+                    }
+                })}
             </ButtonList>
         </div>
     );

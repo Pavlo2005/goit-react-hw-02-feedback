@@ -7,6 +7,11 @@ export class App extends Component {
     good: 0,
     neutral: 0,
     bad: 0,
+    names: [
+      { id: 'id-1', name: 'good', title: 'Good' },
+      { id: 'id-2', name: 'neutral', title: 'Neutral' },
+      { id: 'id-3', name: 'bad', title: 'Bad' },
+    ],
   };
 
   addFeedback = newFeedback => {
@@ -39,10 +44,10 @@ export class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
-
+    const { names } = this.state;
     return (
       <div>
-        <Feedback onAddFeedback={this.addFeedback} ></Feedback>
+        <Feedback onAddFeedback={this.addFeedback} names={names}></Feedback>
         <Statistics good={good} neutral={neutral} bad={bad} message={"There is no feedback"}></Statistics>
       </div>
     );
